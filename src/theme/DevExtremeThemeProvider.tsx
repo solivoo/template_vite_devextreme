@@ -33,8 +33,7 @@ interface DevExtremeThemeProviderProps {
 
 //Componente para proporcionar el contexto de DevExtremeTheme
 export function DevExtremeThemeProvider({ children }: DevExtremeThemeProviderProps) {
-  
-    //Estado para el modo actual light o dark
+  // Estado para el modo actual light o dark
   const [mode, setModeState] = useState<DevExtremeThemeMode>(initialMode);
 
   //Funcion para establecer el modo actual
@@ -54,7 +53,7 @@ export function DevExtremeThemeProvider({ children }: DevExtremeThemeProviderPro
 
   //Efecto para aplicar el tema actual
   useLayoutEffect(() => {
-    const themeName = mode === 'dark' ? 'fluent.blue.dark' : 'fluent.blue.light';
+    const themeName = mode === 'dark' ? 'material.blue.dark' : 'material.blue.light';
     themes.current(themeName);
     document.documentElement.classList.toggle('theme-dark', mode === 'dark');
   }, [mode]);

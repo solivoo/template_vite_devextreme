@@ -1,13 +1,8 @@
 import './App.css'
-import DataGrid, { Editing } from 'devextreme-react/data-grid';
-import ProgressBar from 'devextreme-react/progress-bar';
 import Switch from 'devextreme-react/switch';
+import { ReduxTextBoxPractice } from './practice/ReduxTextBoxPractice.tsx';
+import { RerenderPractice } from './practice/RerenderPractice.tsx';
 import { useDevExtremeTheme } from './theme/devExtremeThemeContext.ts';
-
-const tasks = [
-  { id: 1, task: "Buy groceries", dueDate: new Date(), done: false },
-  { id: 2, task: "Write a blog post", dueDate: new Date(), done: true }
-];
 
 function App() {
   const { mode, setMode } = useDevExtremeTheme();
@@ -25,20 +20,8 @@ function App() {
         </label>
       </header>
       <div id="dashboard">
-        <ProgressBar id="progress" />
-        <DataGrid
-          id="task-grid"
-          dataSource={tasks}
-          keyExpr="id"
-        >
-          <Editing
-            mode="row"
-            allowUpdating={true}
-            allowAdding={true}
-            allowDeleting={true}
-            newRowPosition="last"
-          />
-        </DataGrid>
+        <ReduxTextBoxPractice />
+        <RerenderPractice />        
       </div>
     </>
   )
